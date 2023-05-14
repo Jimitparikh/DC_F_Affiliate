@@ -8,10 +8,8 @@ import { useNavigate, Outlet } from "react-router-dom";
 const Layout = (props) => {
   let navigate = useNavigate();
   const {isLoggedIn }= useSelector((state) => state.auth)
-  const [isActive, setActive] = useState(false);
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
+  const { drawerOpen } = useSelector((state)=> state.state)
+ 
   useEffect(()=> {
     if(!isLoggedIn){
       navigate("/login")
@@ -25,7 +23,7 @@ const Layout = (props) => {
         <Tab.Container id="left-tabs-example" defaultActiveKey="first">
           <div
             className={
-              isActive
+              drawerOpen && drawerOpen
                 ? "show author-tabbing-wrapper d-flex flex-wrap"
                 : "author-tabbing-wrapper d-flex flex-wrap"
             }

@@ -13,8 +13,16 @@ import {
 } from "react-icons/md";
 import { RiDonutChartFill } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawerClose, setDrawerOpen } from "../slices/stateSlice";
 
 const SidePanel = () => {
+    const dispatch = useDispatch();
+    const { drawerOpen } = useSelector((state) => state.state)
+
+    const toggleClass = () => {
+        drawerOpen ? dispatch(setDrawerClose()) : dispatch(setDrawerOpen());
+    };
 
     const [createaffiliatelink, setcreateaffiliatelink] = useState(false);
     const setcreateaffiliatelinkclose = () => setcreateaffiliatelink(false);
@@ -144,7 +152,7 @@ const SidePanel = () => {
             </Modal>
             <div className="tab-item-link">
                 <Nav variant="pills" className="flex-column">
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
@@ -154,7 +162,7 @@ const SidePanel = () => {
                             </p>
                         </NavLink>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/Wallet"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
@@ -164,17 +172,17 @@ const SidePanel = () => {
                             </p>
                         </NavLink>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/Reports"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
-                           <p>
+                            <p>
                                 <RiDonutChartFill />
                                 Reports
                             </p>
                         </NavLink>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/PaymentOption"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
@@ -184,21 +192,21 @@ const SidePanel = () => {
                             </p>
                         </NavLink>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/Notification"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
-                           <p>
+                            <p>
                                 <MdOutlineNotificationsActive />
                                 Notifications
                             </p>
                         </NavLink>
                     </Nav.Item>
-                    <Nav.Item>
+                    <Nav.Item onClick={toggleClass}>
                         <NavLink to="/Profile_Settings"
                             className={({ isActive }) =>
                                 isActive ? "nav-link active" : "nav-link"} end>
-                              <p>
+                            <p>
                                 <MdOutlineManageAccounts />
                                 Profile & Settings
                             </p>

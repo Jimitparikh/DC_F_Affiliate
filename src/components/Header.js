@@ -10,15 +10,16 @@ import { HiMenu } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { logout } from "../slices/auth";
+import { setDrawerClose, setDrawerOpen } from "../slices/stateSlice";
 
 const Header = () => {
   let navigate = useNavigate();
   const dispatch = useDispatch();
   const { affiliater } = useSelector((state) => state.auth)
-  const [isActive, setActive] = useState(false);
+  const { drawerOpen } = useSelector((state)=> state.state)
 
   const toggleClass = () => {
-    setActive(!isActive);
+    drawerOpen ? dispatch(setDrawerClose()) : dispatch(setDrawerOpen()); 
   };
 
   const logouthandler = () => {

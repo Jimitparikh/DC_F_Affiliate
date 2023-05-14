@@ -1,5 +1,5 @@
-// export const AffiliateBaseURL = "http://testapiauthor.dreamcapcha.com"
-export const AffiliateBaseURL = "http://localhost:8000"
+export const AffiliateBaseURL = "http://testapiaffiliate.dreamcapcha.com"
+// export const AffiliateBaseURL = "http://localhost:8000"
 
 // export const BookBaseURL = "http://localhost:8090"
 export const BookBaseURL = "http://testapibook.dreamcapcha.com"
