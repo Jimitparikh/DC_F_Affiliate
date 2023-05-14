@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.cce9b6b0.css",
-    "main.js": "/static/js/main.6f024cbd.js",
+    "main.js": "/static/js/main.b2a62b9a.js",
     "static/media/vide-background.jpg": "/static/media/vide-background.60bd570d5a9793c1b463.jpg",
     "static/media/coupon-bg.png": "/static/media/coupon-bg.ba8d428a2d173f45cf97.png",
     "static/media/coupon-bg-primary.png": "/static/media/coupon-bg-primary.979cc95ba3fb757c973c.png",
@@ -12,10 +12,10 @@
     "static/media/logo-white.svg": "/static/media/logo-white.18a1cf6e2828c0f3af3a5cb1e66d6698.svg",
     "index.html": "/index.html",
     "main.cce9b6b0.css.map": "/static/css/main.cce9b6b0.css.map",
-    "main.6f024cbd.js.map": "/static/js/main.6f024cbd.js.map"
+    "main.b2a62b9a.js.map": "/static/js/main.b2a62b9a.js.map"
   },
   "entrypoints": [
     "static/css/main.cce9b6b0.css",
-    "static/js/main.6f024cbd.js"
+    "static/js/main.b2a62b9a.js"
   ]
 }
